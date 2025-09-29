@@ -1,8 +1,15 @@
 import { Router } from "express";
-import { getAllNotes } from "../controller/notes.controller.js";
+import {
+  createNotes,
+  deleteNotes,
+  editNotes,
+  getAllNotes,
+} from "../controller/notes.controller.js";
 
 const app = Router();
 
-app.get("/", getAllNotes);
+app.get("/", getAllNotes).post("/", createNotes);
+
+app.patch(`/:id`, editNotes).delete("/:id", deleteNotes);
 
 export default app;

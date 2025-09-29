@@ -8,6 +8,8 @@ const port = 3000;
 
 await connectToDb();
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
