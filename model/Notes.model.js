@@ -3,26 +3,27 @@ import { Schema, model } from "mongoose";
 const notesSchema = new Schema({
   notesTitle: {
     type: String,
-    require: true,
+    required: true,
   },
   description: {
     type: String,
-    require: true,
+    required: true,
   },
   username: {
     type: String,
-    require: true,
+    required: true,
   },
 
   userDep: {
     type: String,
-    require: true,
+    required: true,
     enum: ["CSE", "AIDS", "CSBS", "ECE"],
   },
   subject: {
     type: String,
-    require: true,
+    required: true,
   },
 });
 
-export default Notes = model("Notes", notesSchema);
+const Notes = model("Notes", notesSchema);
+export default Notes;

@@ -1,9 +1,8 @@
 import { Router } from "express";
+import { getAllNotes } from "../controller/notes.controller.js";
 
 const app = Router();
 
-app.get("/", (req, res) => {
-  return res.json({ message: "notes route" });
-});
+app.get("/", getAllNotes);
 
 export default app;
