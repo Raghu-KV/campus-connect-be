@@ -3,6 +3,7 @@ import express from "express";
 import connectToDb from "./config/connectToDb.js";
 import mongoose from "mongoose";
 import notesRouter from "./routes/notes.routes.js";
+import userRoutes from "./routes/user.routes.js";
 const app = express();
 const port = 3000;
 
@@ -19,6 +20,7 @@ app.get("/test", (req, res) => {
 });
 
 app.use("/notes", notesRouter);
+app.use("/auth", userRoutes);
 
 mongoose.connection.on("connected", () => {
   app.listen(port, () => {
